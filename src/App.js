@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Dashboard from "./dashboard";
+import Order from "./order";
+import Product from "./product"; 
+import Payment from "./payment"; 
+import User from "./user";
+import Home from "./home";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-function App() {
+const App = () => {
+  const [activeComponent, setActiveComponent] = useState('home');
+
+  const handleMenuClick = (menu) => {
+    setActiveComponent(menu);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex">
+      <Dashboard onMenuClick={handleMenuClick} />
+      <div className="container-fluid">
+        {activeComponent === 'home' && <Home />}
+        {activeComponent === 'order' && <Order />}
+        {activeComponent === 'product' && <Product />} 
+        {activeComponent === 'payment' && <Payment />} 
+        {activeComponent === 'user' && <User />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
