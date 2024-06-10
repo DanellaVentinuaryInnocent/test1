@@ -52,8 +52,9 @@ function Dashboard({ onMenuClick, activeMenu }) {
                             <i className="bi bi-person circle"></i>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Edit User</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">LogOut</Dropdown.Item>
+                            <Dropdown.Item href="#/action-1">Edit Profil</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Tambah Admin</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">LogOut</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
